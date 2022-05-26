@@ -5,6 +5,8 @@ let indicators = document.querySelector(".slider-indicators");
 
 let count = 0;
 sliderItems = Array.from(sliderItems);
+
+// Setting images's display
 sliderItems.forEach(item => {
   if (item.classList.contains("active")) {
     item.style.display = "block";
@@ -14,6 +16,7 @@ sliderItems.forEach(item => {
   }
 });
 
+// Control Buttons
 rightArrow.addEventListener("click", () => {
   if (count !== sliderItems.length - 1) {
     sliderItems[count].style.display = "none";
@@ -45,6 +48,7 @@ leftArrow.addEventListener("click", () => {
   }
 });
 
+// Indicators event
 indicators.addEventListener("click", e => {
   if (e.target.classList.contains("indicator")) {
     e.target.classList.remove("indicator");
